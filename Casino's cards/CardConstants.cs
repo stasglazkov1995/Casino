@@ -73,10 +73,11 @@ namespace Casino_s_cards
         public const string HA = "AH";
         public const string SA = "AS";
 
+        private static readonly CardConstants _source = new CardConstants();
 
         public static IEnumerable<string> GetCardTypes()
         {
-            return typeof(CardConstants).GetFields().Where(t => t.IsLiteral && !t.IsInitOnly).Select(t => t.ToString());
+            return typeof(CardConstants).GetFields().Where(t => t.IsLiteral && !t.IsInitOnly).Select(t => t.GetValue(_source).ToString());
         }
     }
 }

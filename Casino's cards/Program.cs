@@ -20,10 +20,10 @@ namespace Casino_s_cards
             var decksCounter = sortedCards.Values.Min();
 
             Console.WriteLine($"Decks count : {decksCounter}");
-
+            Console.WriteLine("Stas");
             Console.ReadKey();
         }
-
+        
         private static Dictionary<string, int> SortCards(string[] cards)
         {
             var CONSTANT_SOURCE = new CardConstants();
